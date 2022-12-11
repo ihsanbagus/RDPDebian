@@ -6,7 +6,7 @@ sudo useradd -m AGID
 sudo adduser AGID
 sudo echo 'AGID:1234' | sudo chpasswd
 sudo sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
-sudo apt-get update \
+sudo apt update
 sudo wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
 sudo dpkg --install chrome-remote-desktop_current_amd64.deb
 sudo apt install --assume-yes --fix-broken
@@ -27,7 +27,7 @@ printf '\nCheck https://remotedesktop.google.com/headless  Copy Command Of Debia
 read -p "Paste Here: " CRP
 su - AGID -c """$CRP"""
 printf 'Check https://remotedesktop.google.com/access/ \n\n'
-if sudo apt-get upgrade &> /dev/null
+if sudo apt upgrade &> /dev/null
 then
     printf "\n\nUpgrade Completed." >&2
 else
